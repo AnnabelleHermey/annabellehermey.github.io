@@ -26,38 +26,33 @@ $(document).ready(function () {
 });
 
 
-// ===== Smart Section Highlighting with Intersection Observer =====
+// ===== Smart Section Highlighting =====
 const navLinks = document.querySelectorAll("header nav a");
+const trackedSections = [...document.querySelectorAll("section[id]")];
 
-let activeLink = null;
+function updateActiveNav() {
+  const header = document.querySelector("header");
+  const headerHeight = header ? header.offsetHeight : 0;
+  const probeY = window.scrollY + headerHeight + 24;
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      const id = entry.target.getAttribute("id");
-      const link = document.querySelector(`header nav a[href="#${id}"]`);
-      if (!link) return;
+  let currentSection = trackedSections[0] || null;
 
-      if (entry.isIntersecting) {
-        // Update highlight only if section is becoming visible
-        if (activeLink !== link) {
-          navLinks.forEach((l) => l.classList.remove("active"));
-          link.classList.add("active");
-          activeLink = link;
-        }
-      }
-    });
-  },
-  {
-    threshold: 0.25, // more sensitive — section activates when 25% visible
-    rootMargin: "-80px 0px -200px 0px", // top offset for sticky header
-  }
-);
+  trackedSections.forEach((section) => {
+    if (section.offsetTop <= probeY) currentSection = section;
+  });
 
-// Observe all main sections
-document.querySelectorAll("section[id]").forEach((section) => {
-  observer.observe(section);
-});
+  const activeId = currentSection ? currentSection.getAttribute("id") : null;
+
+  navLinks.forEach((link) => {
+    const isActive = link.getAttribute("href") === `#${activeId}`;
+    link.classList.toggle("active", isActive);
+  });
+}
+
+window.addEventListener("scroll", updateActiveNav, { passive: true });
+window.addEventListener("resize", updateActiveNav);
+window.addEventListener("load", updateActiveNav);
+updateActiveNav();
 
 
 // ===== Animated Background for About Section =====

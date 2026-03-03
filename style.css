@@ -275,15 +275,15 @@ header nav a.active {
 /* Skills Section */
 .skills-section {
   background-color: var(--bg-alt);
-  padding: 100px 80px;
+  padding: 100px 48px;
   text-align: left;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .skills-content {
   display: grid;
-  grid-template-columns: 320px minmax(0, 1fr);
+  grid-template-columns: 380px minmax(0, 1fr);
   align-items: start;
   max-width: 1400px;
   width: 100%;
@@ -291,8 +291,8 @@ header nav a.active {
 }
 
 .skills-text {
-  width: 320px;
-  max-width: 320px;
+  width: 380px;
+  max-width: 380px;
   justify-self: start;
 }
 
@@ -305,7 +305,7 @@ header nav a.active {
 .skills-text p {
   color: #ccc;
   line-height: 1.6;
-  max-width: 320px;
+  max-width: 360px;
   font-size: 0.9rem;
 }
 
@@ -317,7 +317,7 @@ header nav a.active {
   gap: 14px;
   width: 100%;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .word-cloud span {
@@ -523,7 +523,7 @@ header nav a.active {
 
 /* Content box */
 .timeline-content {
-  background: var(--bg-alt);
+  background: #4A2E1E;
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 25px 30px;
