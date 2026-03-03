@@ -12,6 +12,7 @@
   --accent-hover: #89B472;   /* darker matcha hover */
   --border: #5C4033;         /* subtle brown border tone */
   --black: #1A0D07;          /* very dark brown for hero/contact */
+  --font-body: 'Montserrat', sans-serif;
 }
 
 
@@ -22,7 +23,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   background-color: var(--bg-dark);
   color: var(--text-light);
   line-height: 1.6;
