@@ -283,16 +283,16 @@ header nav a.active {
 
 .skills-content {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
+  grid-template-columns: 320px minmax(0, 1fr);
   align-items: start;
   max-width: 1400px;
   width: 100%;
-  gap: 8px;
+  gap: 24px;
 }
 
 .skills-text {
-  width: 150px;
-  max-width: 150px;
+  width: 320px;
+  max-width: 320px;
   justify-self: start;
 }
 
@@ -305,7 +305,7 @@ header nav a.active {
 .skills-text p {
   color: #ccc;
   line-height: 1.6;
-  max-width: 150px;
+  max-width: 320px;
   font-size: 0.9rem;
 }
 
@@ -523,7 +523,7 @@ header nav a.active {
 
 /* Content box */
 .timeline-content {
-  background: rgba(44, 26, 18, 0.8);
+  background: var(--bg-alt);
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 25px 30px;
