@@ -284,7 +284,7 @@ header nav a.active {
 .skills-content {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: start;
+  align-items: center;
   max-width: 1320px;
   width: 100%;
   gap: 24px;
@@ -293,7 +293,9 @@ header nav a.active {
 .skills-text {
   width: 100%;
   max-width: none;
-  justify-self: start;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
 }
 
 .skills-text h2 {
@@ -307,6 +309,7 @@ header nav a.active {
   line-height: 1.6;
   max-width: 360px;
   font-size: 0.9rem;
+  margin: 0 auto;
 }
 
 .word-cloud {
